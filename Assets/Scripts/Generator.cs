@@ -14,14 +14,12 @@ public class Generator : MonoBehaviour
 
     private Vector3 _size;
 
-    private const int defaultRadius = 6;
-
     public void Initialize(IDependencyContainer dependencyContainer)
     {
         _main = dependencyContainer.Resolve<Main>();
         _db = dependencyContainer.Resolve<TilesDatabase>();
         MeasureTile();
-        Generate(defaultRadius);
+        Generate(Main.Rules.defaultRadius);
     }
 
     public void EditModeInitialize()
